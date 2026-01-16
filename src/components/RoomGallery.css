@@ -1,0 +1,84 @@
+/* src/components/RoomGallery.css */
+
+.room-gallery-slider {
+  margin: 30px auto;                /* centered */
+  width: 100%;
+  max-width: 1100px;                /* ← wider but not full-screen */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+
+  /* CRITICAL: Fixed height for consistency across all images */
+  height: 520px;                    /* ← Best desktop size – adjust if needed: 480–600px */
+  min-height: 340px;                /* mobile fallback */
+
+  background: #f8f9fa;               /* subtle background if images load slow */
+}
+
+.mySwiper,
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Key fix: make images fill container perfectly */
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                /* crops to fill – professional look */
+  object-position: center;          /* or 'top' if you want more sky/ceiling visible */
+  display: block;
+}
+
+/* Optional: nicer arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 24px;
+}
+
+/* Pagination */
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.swiper-pagination-bullet-active {
+  background: #4a90e2;              /* or your brand color */
+}
+
+/* Mobile adjustments */
+@media (max-width: 1024px) {
+  .room-gallery-slider {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-gallery-slider {
+    height: 380px;                  /* smaller on tablets/phones */
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .room-gallery-slider {
+    height: 320px;                  /* very small screens */
+  }
+}

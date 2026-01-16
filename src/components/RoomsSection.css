@@ -1,0 +1,57 @@
+/* src/components/RoomsSection.css */
+
+.roomsSectionContainer {
+  padding: 40px 20px;
+  text-align: center;
+  background: var(--light-bg);
+}
+
+.roomsSectionContainer h2 {
+  margin-bottom: 1rem;
+}
+
+.roomsSectionContainer p {
+  margin-bottom: 2rem;
+  color: var(--gray);
+}
+
+.roomsOptions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.roomOption {
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  max-width: 350px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform 0.2s;
+}
+
+.roomOption:hover {
+  transform: translateY(-5px);
+}
+
+.optionImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.roomOption h3 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .roomsOptions {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,28 @@
+/* src/pages/About.css */
+
+.aboutContainer {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.aboutContainer p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.list {
+  list-style-type: disc;
+  margin-left: 20px;
+  margin-bottom: 1.5rem;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    padding: 0 10px;
+  }
+}

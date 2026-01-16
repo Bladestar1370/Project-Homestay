@@ -1,0 +1,63 @@
+/* src/pages/Contact.css */
+
+.contactContainer {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  max-width: 700px;
+}
+
+.infoSection p {
+  margin-bottom: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input, .textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.submitButton {
+  padding: 12px;
+  background: var(--primary);  /* #4CAF50 */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submitButton:hover {
+  background: var(--primary-dark);
+}
+
+.note {
+  font-size: 14px;
+  color: var(--gray);
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
