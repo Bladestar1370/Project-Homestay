@@ -11,7 +11,7 @@ function RoomsSection() {
         <Link to="/ac-rooms" className="roomOption">
           <div className="imageWrapper">
             <img
-              src="/assets/ac.png"           // ← fix path (or use import)
+              src="/images/101 after.png"           // ← fix path (or use import)
               alt="Deluxe AC Room at Swami Samarth Homestay"
               className="optionImage"
             />
@@ -28,7 +28,7 @@ function RoomsSection() {
         <Link to="/non-ac-rooms" className="roomOption">
           <div className="imageWrapper">
             <img
-              src="/assets/nonac.png"
+              src="images/102 after.png"
               alt="Budget Non-AC Room near Devgad Beach"
               className="optionImage"
             />
