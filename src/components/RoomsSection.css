@@ -1,57 +1,113 @@
-/* src/components/RoomsSection.css */
-
 .roomsSectionContainer {
-  padding: 40px 20px;
+  padding: 60px 24px;
   text-align: center;
-  background: var(--light-bg);
+  background: var(--light-bg, #f8fafc);
 }
 
 .roomsSectionContainer h2 {
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+  font-weight: 700;
 }
 
 .roomsSectionContainer p {
-  margin-bottom: 2rem;
-  color: var(--gray);
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #64748b;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .roomsOptions {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .roomOption {
   background: white;
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  padding: 20px;
-  max-width: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   text-decoration: none;
-  color: var(--text);
-  transition: transform 0.2s;
+  color: inherit;
+  transition: all 0.28s ease;
 }
 
 .roomOption:hover {
-  transform: translateY(-5px);
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
 }
 
 .optionImage {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
+  transition: transform 0.4s ease;
 }
 
-.roomOption h3 {
-  margin-bottom: 10px;
+.roomOption:hover .optionImage {
+  transform: scale(1.08);
 }
 
-@media (max-width: 768px) {
-  .roomsOptions {
-    flex-direction: column;
-    align-items: center;
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 60%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.roomOption:hover .imageOverlay {
+  opacity: 1;
+}
+
+.priceBadge {
+  background: rgba(56, 142, 60, 0.9);   /* green theme */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.roomContent {
+  padding: 24px 20px;
+  text-align: left;
+}
+
+.roomContent h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.75rem;
+  color: #1e293b;
+}
+
+.roomContent p {
+  color: #64748b;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .roomsSectionContainer {
+    padding: 40px 16px;
+  }
+  .roomsSectionContainer h2 {
+    font-size: 2.1rem;
   }
 }

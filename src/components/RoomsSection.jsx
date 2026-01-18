@@ -1,31 +1,45 @@
-// src/components/RoomsSection.jsx
 import { Link } from 'react-router-dom';
 import './RoomsSection.css';
 
 function RoomsSection() {
   return (
-    <div id="rooms-section" className="roomsSectionContainer"> 
+    <div id="rooms-section" className="roomsSectionContainer">
       <h2>Our Rooms</h2>
-      <p>Choose from our comfortable AC or Non-AC options. Click to view details.</p>
+      <p>Choose from comfortable AC or Non-AC options — perfect for your beach getaway.</p>
+
       <div className="roomsOptions">
         <Link to="/ac-rooms" className="roomOption">
-          <img 
-            src="/src/assets/ac.png"  
-            alt="AC Room"
-            className="optionImage"
-          />
-          <h3>AC Rooms</h3>
-          <p>Deluxe comfort with air conditioning. Starting at ₹4000/night.</p>
+          <div className="imageWrapper">
+            <img
+              src="/assets/ac.png"           // ← fix path (or use import)
+              alt="Deluxe AC Room at Swami Samarth Homestay"
+              className="optionImage"
+            />
+            <div className="imageOverlay">
+              <span className="priceBadge">From ₹4000/night</span>
+            </div>
+          </div>
+          <div className="roomContent">
+            <h3>Deluxe AC Rooms</h3>
+            <p>Stay cool & comfortable with air conditioning • Ideal for families & couples</p>
+          </div>
         </Link>
 
         <Link to="/non-ac-rooms" className="roomOption">
-          <img 
-            src="/src/assets/nonac.png" 
-            alt="Non-AC Room"
-            className="optionImage"
-          />
-          <h3>Non-AC Rooms</h3>
-          <p>Budget-friendly with natural ventilation. Starting at ₹2500/night.</p>
+          <div className="imageWrapper">
+            <img
+              src="/assets/nonac.png"
+              alt="Budget Non-AC Room near Devgad Beach"
+              className="optionImage"
+            />
+            <div className="imageOverlay">
+              <span className="priceBadge">From ₹2500/night</span>
+            </div>
+          </div>
+          <div className="roomContent">
+            <h3>Non-AC Rooms</h3>
+            <p>Budget-friendly • Natural ventilation • Cozy & airy</p>
+          </div>
         </Link>
       </div>
     </div>
