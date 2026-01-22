@@ -5,9 +5,9 @@ function DevgadBeach() {
     <AttractionDetail
       title="Devgad Beach"
       images={[
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/99/51/e5/devgad-beach.jpg",
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/91/df/48/devgad-beach.jpg",
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/9c/7e/aa/devgad-beach.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/5/5e/Devgad_beach.jpg",
+        "https://thumbs.dreamstime.com/b/rocky-beach-devgad-konkan-devgad-beach-sindhudurg-district-maharashtra-state-konkan-india-asia-260648739.jpg",
+        "https://shepherdtraveller.com/wp-content/uploads/2021/04/Devgad-Zipline-Best-zipline-in-India-Shepherd-Traveller.jpg",
       ]}
       about="Devgad Beach is a calm, clean, and less crowded beach in the Konkan region, known for its golden sand and peaceful sunsets."
       distance="3–6 km"

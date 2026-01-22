@@ -1,5 +1,7 @@
 /* src/index.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&display=swap');
+
 :root {
   --primary: #4CAF50;       /* green theme */
   --primary-dark: #388E3C;
@@ -17,7 +19,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Noto Sans Devanagari', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text);
   background: #fff;
   line-height: 1.6;
@@ -38,6 +40,7 @@ button {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;

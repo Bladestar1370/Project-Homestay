@@ -11,6 +11,7 @@ import NonACrooms from './pages/RoomsType/NonACRooms';
 import DevgadBeach from './pages/attractions/DevgadBeach';
 import VijaydurgFort from './pages/attractions/VijaydurgFort';
 import KunkeshwarTemple from "./pages/attractions/KunkeshwarTemple";
+import ScrollToTop from './components/ScrollToTop';
 
 
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/ac-rooms" element={<ACrooms />} />

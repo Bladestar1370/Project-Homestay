@@ -1,9 +1,54 @@
-/* src/components/Footer.css */
-
 .footer {
-  padding: 20px;
+  background: #0f172a; /* dark navy */
+  color: #e5e7eb;
+  padding: 15px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+}
+
+.footer-section h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #38bdf8; /* light blue */
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #facc15; /* yellow accent */
+}
+
+.footer-section p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.footer-bottom {
   text-align: center;
-  background: #222;
-  color: white;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #334155;
   font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
 }

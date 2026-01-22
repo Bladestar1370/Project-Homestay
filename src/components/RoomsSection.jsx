@@ -1,11 +1,15 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import './RoomsSection.css';
 
 function RoomsSection() {
+
+const { t } = useTranslation();
+
   return (
     <div id="rooms-section" className="roomsSectionContainer">
-      <h2>Our Rooms</h2>
-      <p>Choose from comfortable AC or Non-AC options — perfect for your beach getaway.</p>
+      <h2>{t("Our Rooms")}</h2>
+      <p>{t("Choose from comfortable AC or Non-AC options — perfect for your beach getaway.")}</p>
 
       <div className="roomsOptions">
         <Link to="/ac-rooms" className="roomOption">
@@ -20,8 +24,8 @@ function RoomsSection() {
             </div>
           </div>
           <div className="roomContent">
-            <h3>Deluxe AC Rooms</h3>
-            <p>Stay cool & comfortable with air conditioning • Ideal for families & couples</p>
+            <h3>{t("Deluxe AC Rooms")}</h3>
+            <p>{t("Stay cool & comfortable with air conditioning • Ideal for families & couples")}</p>
           </div>
         </Link>
 
@@ -37,8 +41,8 @@ function RoomsSection() {
             </div>
           </div>
           <div className="roomContent">
-            <h3>Non-AC Rooms</h3>
-            <p>Budget-friendly • Natural ventilation • Cozy & airy</p>
+            <h3>{t("Non-AC Rooms")}</h3>
+            <p>{t("Budget-friendly • Natural ventilation • Cozy & airy")}</p>
           </div>
         </Link>
       </div>

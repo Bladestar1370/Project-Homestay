@@ -1,21 +1,24 @@
 // src/pages/Home.jsx
-import BeforeAfterSlider from '../components/BeforeAfterSlider';
+import { useTranslation } from 'react-i18next';
 import Attractions from '../components/Attractions';
 import RoomsSection from '../components/RoomsSection';  // ← New import
 import './Home.css';
 
 function Home() {
+
+const { t } = useTranslation();
+
   return (
     <div>
       {/* Hero Section */}
       <div className="hero">
-        <h1>Swami Samarth Homestay</h1>
-        <p>Peaceful • Clean • Near Devgad Beach</p>
+        <h1>{t("Swami Samarth Homestay")}</h1>
+        <p>{t("Peaceful • Clean • Near Devgad Beach")}</p>
       </div>
 
       {/* Welcome Section */}
       <div className="welcome">
-        <h2>Welcome to Your Home Away from Home</h2>
+        <h2>{t("Welcome to our Homestay")}</h2>
         <RoomsSection />
       </div>
 

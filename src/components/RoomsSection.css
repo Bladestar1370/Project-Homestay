@@ -111,3 +111,13 @@
     font-size: 2.1rem;
   }
 }
+
+
+
+@media (max-width: 480px) {
+  .roomsOptions {
+    grid-template-columns: 1fr; /* Force single column on very small phones */
+    gap: 16px;
+    padding: 0 8px;
+  }
+}

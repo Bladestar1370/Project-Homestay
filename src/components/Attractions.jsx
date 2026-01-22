@@ -1,11 +1,15 @@
 // src/components/Attractions.jsx
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import './Attractions.css';
 
 function Attractions() {
+
+  const { t } = useTranslation();
+
   return (
     <div className="attractionsContainer">
-      <h2 className="title">Nearby Attractions</h2>
+      <h2 className="title">{t("Nearby Attractions")}</h2>   
       
       <div className="grid">
         <Link to="/attractions/devgad-beach" className="card">
@@ -15,12 +19,12 @@ function Attractions() {
             className="cardImage"
           />
           <h3>Devgad Beach</h3>
-          <p>Just 5 minutes away — calm waters & golden sand.</p>
+          <p>Just 5 minutes away - calm waters & golden sand.</p>
         </Link>
 
         <Link to="/attractions/vijaydurg-fort" className="card">
           <img 
-            src="https://assets.cntraveller.in/photos/673c85e8e7fdcdeb4cfa1dde/16:9/w_7824,h_4401,c_limit/Bedroom-2.jpeg" 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP856-QQl-gaLHwhGUEtGwQRxxD91lSchGew&s" 
             alt="Vijaydurg Fort"
             className="cardImage"
           />
@@ -50,7 +54,7 @@ function Attractions() {
 
         <Link to="/attractions/redi-ganesh-temple" className="card">
           <img 
-            src="https://example.com/redi-ganesh-temple.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKwt1Vt3Agfleeffc2e_XzB_5RBNMVVDq_Jw&s"
             alt="Redi Ganesh Temple"
             className="cardImage"
           />
