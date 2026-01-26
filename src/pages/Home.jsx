@@ -22,7 +22,9 @@ const { t } = useTranslation();
         <RoomsSection />
       </div>
 
-      <Attractions />
+      <div id="attractions-section">
+        <Attractions />
+      </div>
 
       
     </div>

@@ -5,9 +5,9 @@ function VijaydurgFort() {
     <AttractionDetail
       title="Vijaydurg Fort"
       images={[
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/45/71/3c/vijaydurg-fort.jpg",
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/59/aa/af/vijaydurg-fort.jpg",
-        "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/36/5d/6b/vijaydurg-fort.jpg",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Bastions_of_vijaydurg.jpg/960px-Bastions_of_vijaydurg.jpg?20101107205403",
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Vijaydurg_Fort_08.jpg/960px-Vijaydurg_Fort_08.jpg?20160608042536",
+        "https://maharashtratourism.gov.in/wp-content/uploads/2024/11/shutterstock_1779313865-w.jpg",
       ]}
       about="Vijaydurg Fort is one of the strongest sea forts in India and a key part of Maratha naval history."
       distance="29–30 km"

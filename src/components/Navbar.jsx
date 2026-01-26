@@ -1,67 +1,153 @@
 // src/components/Navbar.jsx
-import { useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';  // ← New
+import { memo, useState, useCallback } from 'react';
+import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Navbar.css';
 
 function Navbar() {
-  const { t, i18n } = useTranslation();  // ← New
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen(prev => !prev);
+  }, []);
 
-  const changeLanguage = (lng) => {
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false);
+  }, []);
+
+  const changeLanguage = useCallback((lng) => {
     i18n.changeLanguage(lng);
-    setIsMenuOpen(false);  // Close menu after switch
-  };
+    closeMenu();
+  }, [i18n, closeMenu]);
 
-  const scrollToRooms = (e) => {
+  const scrollToRooms = useCallback((e) => {
     e.preventDefault();
+    closeMenu();
+
+    //  Logic for scrolling to rooms section
     if (location.pathname === '/') {
       document.getElementById('rooms-section')?.scrollIntoView({ behavior: 'smooth' });
     } else {
       navigate('/');
+      // Increased timeout slightly for more reliable scroll after navigation
       setTimeout(() => {
         document.getElementById('rooms-section')?.scrollIntoView({ behavior: 'smooth' });
-      }, 600);
+      }, 800);
     }
-    setIsMenuOpen(false);
-  };
+  }, [location.pathname, navigate, closeMenu]);
+
+    //  Logic for scrolling to attractions section
+
+  const scrollToAttractions = useCallback((e) => {
+    e.preventDefault();
+    closeMenu();
+
+    if (location.pathname === '/') {
+      document.getElementById('attractions-section')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById('attractions-section')?.scrollIntoView({ behavior: 'smooth' });
+      }, 800); // same delay — adjust to 1000 if content loads slowly
+    }
+  }, [location.pathname, navigate, closeMenu]);
 
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <Link className="nav-logo" to="/">{t('Swami Samarth Homestay')}</Link>
+        <NavLink 
+          to="/" 
+          className="nav-logo"
+          onClick={closeMenu}
+        >
+          {t('Swami Samarth Homestay')}
+        </NavLink>
 
-        {/* Hamburger Button */}
-        <button className="hamburger" onClick={toggleMenu}>
+        <button 
+          className="hamburger" 
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isMenuOpen}
+        >
           {isMenuOpen ? '✕' : '☰'}
         </button>
 
-        {/* Links */}
         <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <Link className="nav-link" to="/" onClick={() => setIsMenuOpen(false)}>{t('Home')}</Link>
-          <a href="#rooms-section" className="nav-link" onClick={scrollToRooms}>{t('Rooms')}</a>
-          <Link className="nav-link" to="/about" onClick={() => setIsMenuOpen(false)}>{t('About')}</Link>
-          <Link className="nav-link" to="/booking" onClick={() => setIsMenuOpen(false)}>{t('Booking')}</Link>
-          <Link className="nav-link" to="/contact" onClick={() => setIsMenuOpen(false)}>{t('Contact')}</Link>
-          <Link className="nav-link" to="/weather" onClick={() => setIsMenuOpen(false)}>{t('Weather')}</Link>
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            {t('Home')}
+          </NavLink>
 
-          {/* Language Switcher */}
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            onClick={scrollToRooms}
+            end={false}  // so it doesn't force exact match for scroll case
+          >
+            {t('Rooms')}
+          </NavLink>
+
+          {/* <NavLink 
+            to="/booking" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            {t('Booking')}
+          </NavLink> */}
+
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            onClick={scrollToAttractions}
+            end={false}  // so it doesn't force exact match for scroll case
+          >
+            {t('Attractions')}
+          </NavLink>
+
+          <NavLink 
+            to="/about" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            {t('About')}
+          </NavLink>
+
+          <NavLink 
+            to="/contact" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            {t('Contact')}
+          </NavLink>
+
+          <NavLink 
+            to="/weather" 
+            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            onClick={closeMenu}
+          >
+            {t('Weather')}
+          </NavLink>
+
           <div className="lang-switcher">
             <button
               className={`lang-btn ${i18n.language === 'mr' ? 'active' : ''}`}
               onClick={() => changeLanguage('mr')}
+              type="button"
             >
-              MR
+              MARATHI
             </button>
             <button
               className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`}
               onClick={() => changeLanguage('en')}
+              type="button"
             >
-              EN
+              ENGLISH
             </button>
           </div>
         </div>
@@ -70,4 +156,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default memo(Navbar);
