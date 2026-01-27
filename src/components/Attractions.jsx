@@ -9,7 +9,7 @@ function Attractions() {
 
   const [filter, setFilter] = useState('all');
 
-  // You can later move this array to a separate data file (attractionsData.js)
+
   const attractions = [
     {
       slug: 'devgad-beach',

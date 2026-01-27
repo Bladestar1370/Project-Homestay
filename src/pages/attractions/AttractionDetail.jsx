@@ -1,56 +1,68 @@
-// src/pages/attractions/AttractionDetail.jsx
-import { useState } from "react";
+import { useState, useCallback, useEffect, memo } from "react";
 import "./AttractionDetail.css";
 
 function AttractionDetail({
   title,
-  images,
+  images = [],
   about,
   distance,
   travelTime,
-  reachList,
+  reachList = [],
   mapQuery,
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isZoomed, setIsZoomed] = useState(false);
-  const [zoomedImageIndex, setZoomedImageIndex] = useState(null);
+  const [zoomedIndex, setZoomedIndex] = useState(null);
 
-  const prevImage = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
+  const hasMultipleImages = images.length > 1;
+  const isZoomed = zoomedIndex !== null;
 
-  const nextImage = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+  const prevImage = useCallback(() => {
+    setCurrentIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+  }, [images.length]);
 
-  const openZoom = (index) => {
-    setZoomedImageIndex(index);
-    setIsZoomed(true);
-    document.body.style.overflow = "hidden";
-  };
+  const nextImage = useCallback(() => {
+    setCurrentIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+  }, [images.length]);
 
-  const closeZoom = () => {
-    setIsZoomed(false);
-    setZoomedImageIndex(null);
-    document.body.style.overflow = "auto";
-  };
+  const openZoom = useCallback((index) => {
+    setZoomedIndex(index);
+  }, []);
 
-  const navigateZoom = (direction) => {
-    setZoomedImageIndex((prev) =>
-      direction === "prev"
-        ? prev === 0
-          ? images.length - 1
-          : prev - 1
-        : prev === images.length - 1
-        ? 0
-        : prev + 1
-    );
-  };
+  const closeZoom = useCallback(() => {
+    setZoomedIndex(null);
+  }, []);
+
+  const navigateZoom = useCallback(
+    (dir) => {
+      setZoomedIndex((i) =>
+        dir === "prev"
+          ? i === 0 ? images.length - 1 : i - 1
+          : i === images.length - 1 ? 0 : i + 1
+      );
+    },
+    [images.length]
+  );
+
+  // Lock body scroll + keyboard controls
+  useEffect(() => {
+    if (isZoomed) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+
+    const handleKey = (e) => {
+      if (!isZoomed) return;
+      if (e.key === "Escape") closeZoom();
+      if (e.key === "ArrowLeft") navigateZoom("prev");
+      if (e.key === "ArrowRight") navigateZoom("next");
+    };
+
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [isZoomed, closeZoom, navigateZoom]);
 
   return (
     <div className="attractionDetail">
       <div className="detail-layout">
-        {/* Left Column - Text Info */}
+        {/* Left Column */}
         <div className="left-column">
           <h1>{title}</h1>
 
@@ -63,21 +75,15 @@ function AttractionDetail({
             <div className="info-block">
               <h3>Distance & Time</h3>
               {distance && <p>≈ {distance}</p>}
-              {travelTime && (
-                <p>
-                  Takes around <strong>{travelTime}</strong>
-                </p>
-              )}
+              {travelTime && <p>Takes around <strong>{travelTime}</strong></p>}
             </div>
           )}
 
-          {reachList?.length > 0 && (
+          {reachList.length > 0 && (
             <div className="info-block">
               <h3>How to Reach</h3>
               <ul>
-                {reachList.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
+                {reachList.map((item, i) => <li key={i}>{item}</li>)}
               </ul>
             </div>
           )}
@@ -94,31 +100,24 @@ function AttractionDetail({
           )}
         </div>
 
-        {/* Right Column - Gallery */}
+        {/* Right Column */}
         <div className="right-column">
           <div className="gallery">
-            {images.map((img, index) => (
+            {images.map((img, i) => (
               <img
-                key={index}
+                key={i}
                 src={img}
-                alt={`${title} - Image ${index + 1}`}
-                width="800"
-                height="450"           // ≈3:2 ratio – adjust if your images are 16:9 → 800×450
-                className={index === currentIndex ? "active" : ""}
-                onClick={() => openZoom(index)}
-                loading={index === 0 ? "eager" : "lazy"} // preload first image
-                fetchPriority={index === 0 ? "high" : "auto"}
+                alt={`${title} - ${i + 1}`}
+                className={i === currentIndex ? "active" : ""}
+                onClick={() => openZoom(i)}
+                loading={i === 0 ? "eager" : "lazy"}
               />
             ))}
 
-            {images.length > 1 && (
+            {hasMultipleImages && (
               <div className="gallery-nav">
-                <button className="gallery-btn prev" onClick={prevImage}>
-                  ←
-                </button>
-                <button className="gallery-btn next" onClick={nextImage}>
-                  →
-                </button>
+                <button className="gallery-btn" onClick={prevImage}>←</button>
+                <button className="gallery-btn" onClick={nextImage}>→</button>
               </div>
             )}
           </div>
@@ -126,35 +125,23 @@ function AttractionDetail({
       </div>
 
       {/* Lightbox */}
-      {isZoomed && zoomedImageIndex !== null && (
+      {isZoomed && (
         <div className="lightbox" onClick={closeZoom}>
           <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeZoom}>
-              ×
-            </button>
+            <button className="close-btn" onClick={closeZoom}>×</button>
 
-            <button
-              className="lightbox-nav left"
-              onClick={() => navigateZoom("prev")}
-            >
-              ←
-            </button>
+            <button className="lightbox-nav left" onClick={() => navigateZoom("prev")}>←</button>
 
             <img
-              src={images[zoomedImageIndex]}
-              alt={`${title} zoomed view`}
+              src={images[zoomedIndex]}
+              alt={`${title} zoomed`}
               className="zoomed-image"
             />
 
-            <button
-              className="lightbox-nav right"
-              onClick={() => navigateZoom("next")}
-            >
-              →
-            </button>
+            <button className="lightbox-nav right" onClick={() => navigateZoom("next")}>→</button>
 
             <div className="lightbox-caption">
-              {title} ({zoomedImageIndex + 1} / {images.length})
+              {title} ({zoomedIndex + 1} / {images.length})
             </div>
           </div>
         </div>
@@ -163,4 +150,4 @@ function AttractionDetail({
   );
 }
 
-export default AttractionDetail;
+export default memo(AttractionDetail);
