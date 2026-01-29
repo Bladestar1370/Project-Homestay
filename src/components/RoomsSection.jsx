@@ -1,12 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import ac101room1 from '../assets/rooms/ac/101room1.webp';
+import nonac102room1 from '../assets/rooms/nonac/102room1.webp';
 import "./RoomsSection.css";
 
 const ROOMS = [
   {
     id: "ac",
     path: "/ac-rooms",
-    img: "/images/101 after.png",
+    img: ac101room1,
     price: "₹4000/night",
     titleKey: "Deluxe AC Rooms",
     descKey: "Stay cool & comfortable with air conditioning • Ideal for families & couples",
@@ -15,7 +17,7 @@ const ROOMS = [
   {
     id: "nonac",
     path: "/non-ac-rooms",
-    img: "/images/102 after.png",
+    img: nonac102room1,
     price: "₹2500/night",
     titleKey: "Non-AC Rooms",
     descKey: "Budget-friendly • Natural ventilation • Cozy & airy",

@@ -1,8 +1,7 @@
 // src/components/RoomDetail.jsx
 import RoomGallery from '../../components/RoomGallery';
 import BeforeAfterSlider from '../../components/BeforeAfterSlider';
-import { Link } from 'react-router-dom'; // if using react-router
-
+import { Link } from 'react-router-dom';
 
 export default function RoomDetail({
   title,
@@ -12,6 +11,12 @@ export default function RoomDetail({
   price,
   priceNote = '(includes breakfast)',
   className = '',
+  // New optional props for before/after slider
+  beforeSrc,
+  afterSrc,
+  beforeAlt = "Room before improvements",
+  afterAlt = "Room after improvements",
+  sliderTitle = "Room Before & After",
 }) {
   return (
     <div className={`roomDetailsContainer ${className}`}>
@@ -33,7 +38,16 @@ export default function RoomDetail({
         </p>
       </div>
 
-      <BeforeAfterSlider />
+      {/* Conditionally render the slider only if both images are provided */}
+      {beforeSrc && afterSrc && (
+        <BeforeAfterSlider
+          beforeSrc={beforeSrc}
+          afterSrc={afterSrc}
+          beforeAlt={beforeAlt}
+          afterAlt={afterAlt}
+          title={sliderTitle}
+        />
+      )}
 
       <Link to="/booking" className="bookButton">
         Book Now

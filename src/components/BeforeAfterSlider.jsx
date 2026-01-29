@@ -1,28 +1,29 @@
 // src/components/BeforeAfterSlider.jsx
 import { useState, useRef, useEffect } from 'react';
-import beforeImg from '../assets/before.jpg';
-import afterImg from '../assets/after.jpg';
 import './BeforeAfterSlider.css';
 
-function BeforeAfterSlider() {
-  const [position, setPosition] = useState(50); // 0–100%
+function BeforeAfterSlider({ 
+  beforeSrc, 
+  afterSrc, 
+  beforeAlt = "Room before renovation", 
+  afterAlt = "Room after renovation",
+  title = "Room Before & After"   // optional – you can override the <h3>
+}) {
+  const [position, setPosition] = useState(50);
   const containerRef = useRef(null);
 
   const handleMove = (clientX) => {
     if (!containerRef.current) return;
-
     const rect = containerRef.current.getBoundingClientRect();
     const x = clientX - rect.left;
     const percent = Math.max(0, Math.min(100, (x / rect.width) * 100));
-
     setPosition(percent);
   };
 
+  // Mouse & touch handlers remain the same...
   const handleMouseMove = (e) => handleMove(e.clientX);
   const handleTouchMove = (e) => {
-    if (e.touches.length > 0) {
-      handleMove(e.touches[0].clientX);
-    }
+    if (e.touches.length > 0) handleMove(e.touches[0].clientX);
   };
 
   const handleMouseDown = () => {
@@ -45,14 +46,13 @@ function BeforeAfterSlider() {
     document.removeEventListener('touchend', handleTouchEnd);
   };
 
-  // Optional: set initial position on mount
   useEffect(() => {
-    // You can also add resize listener if you want to recalculate on window resize
+    // Optional resize listener can be added here later
   }, []);
 
   return (
     <div className="sliderContainer">
-      <h3>Room Before & After</h3>
+      <h3>{title}</h3>
 
       <div
         className="img-wrapper"
@@ -61,18 +61,23 @@ function BeforeAfterSlider() {
         onTouchStart={handleTouchStart}
       >
         <img
-          src={beforeImg}
-          alt="Empty Room – Before"
+          src={beforeSrc}
+          alt={beforeAlt}
           className="img before"
+          loading="lazy"
+          width="800"           // ← add explicit dimensions (helps CLS + performance)
+          height="600"
         />
         <img
-          src={afterImg}
-          alt="Prepared Room – After"
+          src={afterSrc}
+          alt={afterAlt}
           className="img after"
           style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+          loading="lazy"
+          width="800"
+          height="600"
         />
 
-        {/* Vertical divider line + handle */}
         <div
           className="slider-handle"
           style={{ left: `${position}%` }}
@@ -85,13 +90,13 @@ function BeforeAfterSlider() {
       </div>
 
       <div className="labels">
-        <span>Empty Room</span>
-        <span>Prepared Room</span>
+        <span>Before</span>
+        <span>After</span>
       </div>
 
-      {/* Hidden range input for accessibility (screen readers) */}
+      {/* Accessibility range input */}
       <label className="sr-only" htmlFor="before-after-slider">
-        Compare empty and prepared room (slide to reveal)
+        Compare before and after room (slide to reveal)
       </label>
       <input
         id="before-after-slider"
@@ -101,9 +106,6 @@ function BeforeAfterSlider() {
         value={position}
         onChange={(e) => setPosition(Number(e.target.value))}
         className="sr-only"
-        aria-valuemin="0"
-        aria-valuemax="100"
-        aria-valuenow={position}
       />
     </div>
   );
