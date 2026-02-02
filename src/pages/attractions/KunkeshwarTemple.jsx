@@ -6,11 +6,23 @@ function KunkeshwarTemple() {
     <AttractionDetail
       title="Kunkeshwar Temple"
       images={[
-        "https://static.mediawire.in/pr/metadata/47901564/temp/52138844_Kankeshwar_Temple.png?id=47875",
-        "https://utsav.gov.in/public/uploads/darshan_cover_image/darshan_117/17141288592105861469.jpg",
-        "https://t3.ftcdn.net/jpg/05/43/38/46/360_F_543384666_jdBc3qC2gwGLHMVyv03ikTQzr19RRQgP.jpg",
-        "https://example.com/kunkeshwar-beach-temple.jpg", // replace if you have better photo
-      ]}
+  {
+    src: "https://static.mediawire.in/pr/metadata/47901564/temp/52138844_Kankeshwar_Temple.png?id=47875",
+    alt: "Kunkeshwar Mahadev Temple – front view with traditional architecture",
+  },
+  {
+    src: "https://utsav.gov.in/public/uploads/darshan_cover_image/darshan_117/17141288592105861469.jpg",
+    alt: "Kunkeshwar Temple deity darshan view",
+  },
+  {
+    src: "https://t3.ftcdn.net/jpg/05/43/38/46/360_F_543384666_jdBc3qC2gwGLHMVyv03ikTQzr19RRQgP.jpg",
+    alt: "Ancient stone carvings and structure of Kunkeshwar Shiva Temple",
+  },
+  {
+    src: "https://example.com/kunkeshwar-beach-temple.jpg",
+    alt: "Kunkeshwar Temple located next to the beach (placeholder image)",
+  },
+]}
       about="Kunkeshwar Temple (also known as Kunkeshwar Mahadev) is an ancient Shiva temple situated right next to a beautiful beach in Sindhudurg district. Often called 'Konkan Kashi', the temple features intricate stone carvings and is a major pilgrimage site. The adjacent Kunkeshwar Beach adds to its serene and spiritual charm."
       distance="14–18 km"
       travelTime="20–35 minutes"

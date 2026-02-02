@@ -6,9 +6,18 @@ function MithmumbariBeach() {
     <AttractionDetail
       title="Mithmumbari Beach"
       images={[
-        "https://www.tripadvisor.com/Attraction_Review-g6749529-d24090593-Reviews-Mithmumbari_Beach-Devgad_Sindhudurg_District_Maharashtra.html", // Note: Replace with direct image if you extract one; Tripadvisor often has user photos of clean white sand & long shoreline
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSomePlaceholderForMithmumbari", // Placeholder - search & replace with actual public domain / free image URLs of Mithmumbari (clean, long, uncrowded beach with white sand)
-        "https://www.instagram.com/explore/locations/726944050794479/mithmumbari-beach", // Note: Instagram location link; use a direct image in production
+        {
+          src: "https://media.gettyimages.com/id/1769313865/photo/windmills-on-mithmumbari-beach-devgad.jpg", // Similar stock / representative
+          alt: "Pristine long white-sand stretch of Mithmumbari Beach with windmills in background",
+        },
+        {
+          src: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/8e/4a/9f/mithmumbari-beach.jpg", // Typical Tripadvisor direct if available; replace with real one
+          alt: "Clean, uncrowded Mithmumbari Beach near Devgad – golden sand and calm sea",
+        },
+        {
+          src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e", // Generic beautiful Konkan-style beach as fallback (replace with specific if you find)
+          alt: "Serene coastal view at Mithmumbari Beach, perfect for relaxation",
+        },
       ]}
       about="Mithmumbari Beach is a pristine, uncrowded, and very long white-sand beach in Devgad, often called one of the cleanest and most beautiful in the area. Nestled between Devgad and Kunkeshwar beaches, it offers peaceful vibes, scenic coastal drives, and a perfect spot for relaxation away from crowds."
       distance="3–5 km"

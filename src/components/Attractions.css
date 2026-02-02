@@ -15,7 +15,7 @@
   padding-bottom: 20px;
 }
 
-.grid {
+.attractionsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
@@ -43,6 +43,10 @@
   height: 180px;
   object-fit: cover;
   border-radius: 8px;
+
+  aspect-ratio: 16 / 9;     /* or 16/9, 3/2, 1/1 – test what looks best for your photos */
+  height: auto;            /* let height follow aspect-ratio */
+  min-height: 160px;
 }
 
 .card:hover .cardImage {

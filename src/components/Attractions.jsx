@@ -108,7 +108,7 @@ function Attractions() {
         </div>
       </div>
 
-      <div className="grid">
+      <div className="attractionsGrid">
         {filteredAttractions.map((attr) => (
           <Link key={attr.slug} to={`/attractions/${attr.slug}`} className="card">
             <img 

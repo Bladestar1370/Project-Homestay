@@ -5,9 +5,18 @@ function DevgadBeach() {
     <AttractionDetail
       title="Devgad Beach"
       images={[
-        "https://upload.wikimedia.org/wikipedia/commons/5/5e/Devgad_beach.jpg",
-        "https://thumbs.dreamstime.com/b/rocky-beach-devgad-konkan-devgad-beach-sindhudurg-district-maharashtra-state-konkan-india-asia-260648739.jpg",
-        "https://shepherdtraveller.com/wp-content/uploads/2021/04/Devgad-Zipline-Best-zipline-in-India-Shepherd-Traveller.jpg",
+        {
+          src: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Devgad_beach.jpg",
+          alt: "Golden sands and calm waters of Devgad Beach",
+        },
+        {
+          src: "https://thumbs.dreamstime.com/b/rocky-beach-devgad-konkan-devgad-beach-sindhudurg-district-maharashtra-state-konkan-india-asia-260648739.jpg",
+          alt: "Rocky shoreline at Devgad Beach, Konkan",
+        },
+        {
+          src: "https://shepherdtraveller.com/wp-content/uploads/2021/04/Devgad-Zipline-Best-zipline-in-India-Shepherd-Traveller.jpg",
+          alt: "Zipline adventure overlooking Devgad Beach",
+        },
       ]}
       about="Devgad Beach is a calm, clean, and less crowded beach in the Konkan region, known for its golden sand and peaceful sunsets."
       distance="3–6 km"
