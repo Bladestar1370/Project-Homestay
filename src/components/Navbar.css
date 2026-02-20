@@ -77,6 +77,44 @@
   text-shadow: 0 0 12px rgba(255, 102, 0, 0.7);
 }
 
+/* Medium screens (small laptops / tablets landscape) */
+@media (max-width: 1030px) {
+
+  .navbar {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .nav-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .nav-links {
+    gap: 1.4rem; /* reduce spacing */
+  }
+
+  .nav-link {
+    font-size: 1rem; /* slightly smaller text */
+  }
+
+  .nav-logo {
+    font-size: 1.4rem;
+  }
+
+  .lang-switcher {
+    margin-left: 1rem;
+    gap: 0.4rem;
+  }
+
+  .lang-btn {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+
+
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .nav-container {
@@ -176,7 +214,5 @@
     justify-content: center;
   }
 }
-
-
 
 

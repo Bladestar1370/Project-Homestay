@@ -21,6 +21,24 @@
   margin-left: 20px;
 }
 
+.details p strong {
+  font-style:inherit;
+  font-size: 30px;
+  color: rgb(59, 59, 59);
+}
+
+.details p {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  align-items: center;
+  text-align: center;
+}
+
+
+
 .bookButton {
   display: inline-block;
   padding: 12px 24px;

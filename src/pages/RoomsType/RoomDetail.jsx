@@ -8,8 +8,8 @@ export default function RoomDetail({
   description,
   images,
   features,
-  price,
-  priceNote = '(includes breakfast)',
+  // price,                                        // if wanted to show price then use this
+  // priceNote = '(includes breakfast)',
   className = '',
   // New optional props for before/after slider
   beforeSrc,
@@ -34,7 +34,7 @@ export default function RoomDetail({
         </ul>
 
         <p>
-          <strong>Price:</strong> ₹{price.toLocaleString()} / night {priceNote}
+          <strong>Contact:</strong> 9421146213 / 9404499370
         </p>
       </div>
 
@@ -49,9 +49,9 @@ export default function RoomDetail({
         />
       )}
 
-      <Link to="/booking" className="bookButton">
+      {/* <Link to="/booking" className="bookButton">
         Book Now
-      </Link>
+      </Link> */}
     </div>
   );
 }

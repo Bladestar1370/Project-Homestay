@@ -28,7 +28,7 @@ function NonACRooms() {
       description="Our Non-AC rooms provide affordable, clean stays with natural breeze and essential amenities. Ideal for budget travelers enjoying Devgad's fresh air."
       images={nonAcImages}
       features={nonAcFeatures}
-      price={2500}
+      // price={2500}                     // if wanted to show price then use this
       className="non-ac-room-detail"
       beforeSrc= {nonacBefore}
       afterSrc= {nonacAfter}

@@ -1,43 +1,63 @@
+
 // src/pages/Contact.jsx
 import './Contact.css';
 
 function Contact() {
   return (
     <div className="contactContainer">
-      <h1>Contact Us</h1>
-      
-      <div className="grid">
-        <div className="infoSection">
-          <h3>Get in Touch</h3>
-          <p><strong>Phone:</strong> +91 98xxxx xxxxx</p>
-          <p><strong>WhatsApp:</strong> +91 98xxxx xxxxx</p>
-          <p><strong>Email:</strong> swamisamarthhomestay@gmail.com</p>
-          <p><strong>Address:</strong> Devgad, Sindhudurg, Maharashtra 416613</p>
-        </div>
+      <div className="contactHeader">
+        <h1>Contact Us</h1>
+        <p className="intro">
+          Planning a Konkan getaway? We're happy to help!
+        </p>
+      </div>
 
-        <div className="formSection">
-          <h3>Send us a message</h3>
-          <form className="form">
-            <input type="text" placeholder="Your Name" className="input" />
-            <input type="email" placeholder="Your Email" className="input" />
-            <input type="tel" placeholder="Phone Number" className="input" />
-            <textarea 
-              placeholder="Your Message" 
-              rows="5" 
-              className="textarea"
-            />
-            <button 
-              type="submit"
-              className="submitButton"
-            >
-              Send Message
-            </button>
-          </form>
-          <p className="note">
-            (This is a static form for now — we'll connect it to email/WhatsApp later)
+      <div className="grid">
+        <div className="infoCard">
+          <h3>Swami Samarth Homestay</h3>
+
+          <p className="contact-line">
+            <strong>Phone / WhatsApp:</strong> +91 9421146213
+          </p>
+
+          <a
+            href="https://wa.me/919421146213"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsappBtn"
+          >
+            Chat on WhatsApp
+          </a>
+
+          <p className="contact-line">
+            <strong>Alternative Number:</strong> +91 9404499370
+          </p>
+
+          <p className="contact-line">
+            <strong>Email:</strong> sumitdhuri61@gmail.com
+          </p>
+
+          <p className="address">
+            Devgad, Sindhudurg District<br />
+            Maharashtra 416613
           </p>
         </div>
+
+        <div className="infoCard">
+          <h3>Before You Message Us</h3>
+          <p className="smallText">It helps us reply faster if you tell us:</p>
+
+          <ul>
+            <li>📅 Approximate dates of stay</li>
+            <li>👨‍👩‍👧 Number of adults & children</li>
+            <li>🍽️ Any special requests (food, early check-in, etc.)</li>
+          </ul>
+        </div>
       </div>
+
+      <p className="closing-note">
+        We look forward to welcoming you!
+      </p>
     </div>
   );
 }

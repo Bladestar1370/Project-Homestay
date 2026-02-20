@@ -9,7 +9,6 @@ const ROOMS = [
     id: "ac",
     path: "/ac-rooms",
     img: ac101room1,
-    price: "₹4000/night",
     titleKey: "Deluxe AC Rooms",
     descKey: "Stay cool & comfortable with air conditioning • Ideal for families & couples",
     alt: "Deluxe AC Room at Swami Samarth Homestay",
@@ -18,7 +17,6 @@ const ROOMS = [
     id: "nonac",
     path: "/non-ac-rooms",
     img: nonac102room1,
-    price: "₹2500/night",
     titleKey: "Non-AC Rooms",
     descKey: "Budget-friendly • Natural ventilation • Cozy & airy",
     alt: "Budget Non-AC Room near Devgad Beach",
@@ -52,7 +50,7 @@ function RoomsSection() {
                 decoding="async"
               />
               <div className="imageOverlay">
-                <span className="priceBadge">From {room.price}</span>
+                <span className="priceBadge">Info</span>
               </div>
             </div>
 

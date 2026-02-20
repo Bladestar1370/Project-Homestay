@@ -19,7 +19,7 @@ function Footer() {
           <h4>Contact</h4>
           <p>📍 Devgad, Maharashtra</p>
           <p>📞 +91 9421146213</p>
-          <p>✉️ swamisamarthhomestay@gmail.com</p>
+          <p>✉️ sumitdhuri61@gmail.com</p>
         </div>
       </div>
 

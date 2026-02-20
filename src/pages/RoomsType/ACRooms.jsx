@@ -27,7 +27,7 @@ function ACRooms() {
       description="Our AC rooms offer premium comfort with air conditioning, spacious layout, and modern amenities. Perfect for a relaxing stay in Devgad's tropical climate."
       images={acImages}
       features={acFeatures}
-      price={4000}
+      // price={4000}                   // if wanted to show price then use this
       className="ac-room-detail"
       beforeSrc={acBefore}
       afterSrc={acAfter}
