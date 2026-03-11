@@ -39,7 +39,7 @@ function Navbar() {
     }
   }, [location.pathname, navigate, closeMenu]);
 
-    //  Logic for scrolling to attractions section
+  //  Logic for scrolling to attractions section
 
   const scrollToAttractions = useCallback((e) => {
     e.preventDefault();
@@ -57,102 +57,80 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="nav-container">
-        <NavLink 
-          to="/" 
-          className="nav-logo"
-          onClick={closeMenu}
-        >
-          {t('Swami Samarth Homestay')}
-        </NavLink>
+  <div className="nav-container">
 
-        <button 
-          className="hamburger" 
-          onClick={toggleMenu}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isMenuOpen}
+    <NavLink
+      to="/"
+      className="nav-logo"
+      onClick={closeMenu}
+    >
+      {t('Swami Samarth Homestay')}
+    </NavLink>
+
+    {/* RIGHT SIDE CONTROLS */}
+    <div className="nav-right">
+
+      {/* Language Switcher */}
+      <div className="lang-switcher">
+        <button
+          className={`lang-btn ${i18n.language === 'mr' ? 'active' : ''}`}
+          onClick={() => changeLanguage('mr')}
+          type="button"
         >
-          {isMenuOpen ? '✕' : '☰'}
+          MAR
         </button>
 
-        <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <NavLink 
-            to="/" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            onClick={closeMenu}
-          >
-            {t('Home')}
-          </NavLink>
-
-          <NavLink 
-            to="/" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            onClick={scrollToRooms}
-            end={false}  // so it doesn't force exact match for scroll case
-          >
-            {t('Rooms')}
-          </NavLink>
-
-          {/* <NavLink 
-            to="/booking" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            onClick={closeMenu}
-          >
-            {t('Booking')}
-          </NavLink> */}
-
-          <NavLink 
-            to="/" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            onClick={scrollToAttractions}
-            end={false}  // so it doesn't force exact match for scroll case
-          >
-            {t('Attractions')}
-          </NavLink>
-
-          <NavLink 
-            to="/about" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            onClick={closeMenu}
-          >
-            {t('About')}
-          </NavLink>
-
-          <NavLink 
-            to="/contact" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            onClick={closeMenu}
-          >
-            {t('Contact')}
-          </NavLink>
-
-          <NavLink 
-            to="/weather" 
-            className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
-            onClick={closeMenu}
-          >
-            {t('Weather')}
-          </NavLink>
-
-          <div className="lang-switcher">
-            <button
-              className={`lang-btn ${i18n.language === 'mr' ? 'active' : ''}`}
-              onClick={() => changeLanguage('mr')}
-              type="button"
-            >
-              MARATHI
-            </button>
-            <button
-              className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`}
-              onClick={() => changeLanguage('en')}
-              type="button"
-            >
-              ENGLISH
-            </button>
-          </div>
-        </div>
+        <button
+          className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`}
+          onClick={() => changeLanguage('en')}
+          type="button"
+        >
+          ENG
+        </button>
       </div>
-    </nav>
+
+      {/* Hamburger */}
+      <button
+        className="hamburger"
+        onClick={toggleMenu}
+        aria-expanded={isMenuOpen}
+      >
+        {isMenuOpen ? '✕' : '☰'}
+      </button>
+
+    </div>
+
+    {/* NAV LINKS */}
+    <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+
+      <NavLink to="/" className="nav-link" onClick={closeMenu}>
+        {t('Home')}
+      </NavLink>
+
+      <NavLink to="/" className="nav-link" onClick={scrollToRooms}>
+        {t('Rooms')}
+      </NavLink>
+
+      <NavLink to="/" className="nav-link" onClick={scrollToAttractions}>
+        {t('Attractions')}
+      </NavLink>
+
+      <NavLink to="/about" className="nav-link" onClick={closeMenu}>
+        {t('About')}
+      </NavLink>
+
+      <NavLink to="/contact" className="nav-link" onClick={closeMenu}>
+        {t('Contact')}
+      </NavLink>
+
+      <NavLink to="/weather" className="nav-link" onClick={closeMenu}>
+        {t('Weather')}
+      </NavLink>
+
+    </div>
+
+  </div>
+</nav>
   );
 }
 

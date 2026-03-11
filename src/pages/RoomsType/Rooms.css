@@ -1,8 +1,8 @@
 /* src/pages/ACrooms.css */
 
 .roomDetailsContainer {
-  max-width: 900px;
-  margin: 15px auto;
+  max-width: 1200px;
+  margin: auto;
   padding: 20px;
   text-align: center;
 }
@@ -28,8 +28,8 @@
 }
 
 .details p {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   color: black;
   font-weight: bold;
   font-size: 30px;
@@ -88,4 +88,139 @@
   .room-image {
     height: 200px;
   }
+}
+
+
+.whatsapp-button {
+  display: block;               /* change from inline-block */
+  width: fit-content;           /* keeps button width according to text */
+  margin: 1rem auto;            /* centers horizontally */
+  padding: 0.8rem 1.5rem;
+  background-color: #25D366;    /* WhatsApp green */
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.whatsapp-button:hover {
+  background-color: #20b358;
+}
+
+.whatsapp-button::before {
+  content: "💬 ";
+  font-size: 1.2em;
+}
+
+
+
+
+.room-title{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+/* Layout */
+
+.room-layout{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:40px;
+  margin-top:30px;
+}
+
+/* Description */
+
+.room-description{
+  margin-bottom:20px;
+  line-height:1.6;
+}
+
+/* Amenities */
+
+.features-list{
+  list-style:none;
+  padding:0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-bottom:20px;
+}
+
+.features-list li{
+  background:#f7f7f7;
+  padding:8px 12px;
+  border-radius:6px;
+}
+
+/* Extra details */
+
+.room-extra{
+  list-style:none;
+  padding:0;
+  margin-bottom:20px;
+}
+
+.room-extra li{
+  margin:6px 0;
+}
+
+/* CONTACT CARD */
+
+.booking-card{
+  position:sticky;
+  top:100px;
+  border:1px solid #ddd;
+  padding:25px;
+  border-radius:10px;
+  height:fit-content;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+.phone-number{
+  font-size:20px;
+  font-weight:bold;
+  margin:15px 0;
+}
+
+/* Buttons */
+
+.call-btn{
+  display:block;
+  background:#ff7a00;
+  color:white;
+  padding:12px;
+  text-decoration:none;
+  border-radius:6px;
+  margin-top:10px;
+  font-weight:bold;
+}
+
+.whatsapp-btn{
+  display:block;
+  background:#25D366;
+  color:white;
+  padding:12px;
+  text-decoration:none;
+  border-radius:6px;
+  margin-top:10px;
+  font-weight:bold;
+}
+
+/* Responsive */
+
+@media (max-width: 900px){
+
+  .room-layout{
+    grid-template-columns:1fr;
+  }
+
+  .booking-card{
+    position:relative;
+    top:0;
+  }
+
 }

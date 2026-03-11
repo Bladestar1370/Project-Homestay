@@ -3,7 +3,8 @@
 .room-gallery-slider {
   margin: 30px auto;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1200px;
+  max-height: 500px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);

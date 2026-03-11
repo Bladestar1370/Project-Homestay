@@ -1,17 +1,15 @@
 // src/components/RoomDetail.jsx
-import RoomGallery from '../../components/RoomGallery';
-import BeforeAfterSlider from '../../components/BeforeAfterSlider';
-import { Link } from 'react-router-dom';
+
+import RoomGallery from "../../components/RoomGallery";
+import BeforeAfterSlider from "../../components/BeforeAfterSlider";
+import "./Rooms.css";
 
 export default function RoomDetail({
   title,
   description,
   images,
   features,
-  // price,                                        // if wanted to show price then use this
-  // priceNote = '(includes breakfast)',
-  className = '',
-  // New optional props for before/after slider
+  className = "",
   beforeSrc,
   afterSrc,
   beforeAlt = "Room before improvements",
@@ -20,38 +18,80 @@ export default function RoomDetail({
 }) {
   return (
     <div className={`roomDetailsContainer ${className}`}>
-      <h1>{title}</h1>
-      <p>{description}</p>
 
+      <h1 className="room-title">{title}</h1>
+
+      {/* Image Gallery */}
       <RoomGallery images={images} />
 
-      <div className="details">
-        <h2>Features</h2>
-        <ul>
-          {features.map((feature, idx) => (
-            <li key={idx}>{feature}</li>
-          ))}
-        </ul>
+      <div className="room-layout">
 
-        <p>
-          <strong>Contact:</strong> 9421146213 / 9404499370
-        </p>
+        {/* LEFT SIDE */}
+        <div className="room-info">
+
+          <h2>Room Description</h2>
+          <p className="room-description">{description}</p>
+
+          <h2>Amenities</h2>
+          <ul className="features-list">
+            {features.map((feature, idx) => (
+              <li key={idx}>{feature}</li>
+            ))}
+          </ul>
+
+          <h2>Room Details</h2>
+          <ul className="room-extra">
+            <li>👥 Capacity: 2 Adults</li>
+            <li>🛏 Bed Type: King Size Bed</li>
+            <li>⏰ Check-in: 12 PM</li>
+            <li>⏰ Check-out: 11 AM</li>
+          </ul>
+
+          {/* Before After Slider */}
+          {beforeSrc && afterSrc && (
+            <BeforeAfterSlider
+              beforeSrc={beforeSrc}
+              afterSrc={afterSrc}
+              beforeAlt={beforeAlt}
+              afterAlt={afterAlt}
+              title={sliderTitle}
+            />
+          )}
+
+        </div>
+
+
+        {/* RIGHT SIDE CONTACT CARD */}
+        <div className="booking-card">
+
+          <h3>Book This Room</h3>
+
+          <p className="contact-text">
+            For booking and availability please contact:
+          </p>
+
+          <p className="phone-number">
+            📞 8805182813 <br/>
+            📞 9404499370
+          </p>
+
+          <a href="tel:8805182813" className="call-btn">
+            Call Now
+          </a>
+
+          <a
+            href="https://wa.me/918805182813"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp-btn"
+          >
+            WhatsApp Booking
+          </a>
+
+        </div>
+
       </div>
 
-      {/* Conditionally render the slider only if both images are provided */}
-      {beforeSrc && afterSrc && (
-        <BeforeAfterSlider
-          beforeSrc={beforeSrc}
-          afterSrc={afterSrc}
-          beforeAlt={beforeAlt}
-          afterAlt={afterAlt}
-          title={sliderTitle}
-        />
-      )}
-
-      {/* <Link to="/booking" className="bookButton">
-        Book Now
-      </Link> */}
     </div>
   );
 }

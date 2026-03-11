@@ -17,11 +17,11 @@ function Contact() {
           <h3>Swami Samarth Homestay</h3>
 
           <p className="contact-line">
-            <strong>Phone / WhatsApp:</strong> +91 9421146213
+            <strong>Phone / WhatsApp:</strong> +91 8805182813
           </p>
 
           <a
-            href="https://wa.me/919421146213"
+            href="https://wa.me/918805182813"
             target="_blank"
             rel="noopener noreferrer"
             className="whatsappBtn"

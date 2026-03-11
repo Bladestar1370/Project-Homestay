@@ -2,8 +2,8 @@
 import RoomDetail from '../RoomsType/RoomDetail';
 import nonac102room1 from '../../assets/rooms/nonac/102room1.webp';
 import nonac101room2 from '../../assets/rooms/nonac/102room2.webp';
-import nonacBefore  from '../../assets/beforeAfter/102-before.webp';
-import nonacAfter  from '../../assets/beforeAfter/102-after.webp';
+import nonacBefore from '../../assets/beforeAfter/102-before.webp';
+import nonacAfter from '../../assets/beforeAfter/102-after.webp';
 import './Rooms.css';
 
 const nonAcImages = [
@@ -30,8 +30,8 @@ function NonACRooms() {
       features={nonAcFeatures}
       // price={2500}                     // if wanted to show price then use this
       className="non-ac-room-detail"
-      beforeSrc= {nonacBefore}
-      afterSrc= {nonacAfter}
+      beforeSrc={nonacBefore}
+      afterSrc={nonacAfter}
       beforeAlt="Non-AC Room before improvements"
       afterAlt="Non-AC Room after cleaning & setup"
       sliderTitle="Non-AC Room Transformation"
