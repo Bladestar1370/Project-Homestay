@@ -27,7 +27,7 @@ function RoomsSection() {
   const { t } = useTranslation();
 
   return (
-    <section id="rooms-section" className="roomsSectionContainer" aria-labelledby="rooms-heading">
+    <section id="rooms-section" className="roomsSectionContainer">
       <h2 id="rooms-heading">{t("Our Rooms")}</h2>
       <p>{t("Choose from comfortable AC or Non-AC options — perfect for your beach getaway.")}</p>
 
@@ -50,7 +50,7 @@ function RoomsSection() {
                 decoding="async"
               />
               <div className="imageOverlay">
-                <span className="priceBadge">Info</span>
+                <span className="priceBadge">Click for more info</span>
               </div>
             </div>
 

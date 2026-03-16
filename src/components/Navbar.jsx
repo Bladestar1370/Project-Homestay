@@ -77,7 +77,7 @@ function Navbar() {
           onClick={() => changeLanguage('mr')}
           type="button"
         >
-          MAR
+          MARATHI
         </button>
 
         <button
@@ -85,7 +85,7 @@ function Navbar() {
           onClick={() => changeLanguage('en')}
           type="button"
         >
-          ENG
+          ENGLISH
         </button>
       </div>
 

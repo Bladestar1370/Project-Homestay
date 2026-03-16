@@ -1,21 +1,31 @@
 /* src/pages/Contact.css */
 
 .contactContainer {
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 0 20px;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("/background-images/contact-us.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+   position: relative;
+  isolation: isolate; 
 }
 
 .contactHeader {
   text-align: center;
-  margin-bottom: 40px;
 }
 
 .contactHeader h1 {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 12px;
-  color: #222;
+  padding-top: 20px;
+  color: #ecec0f;
+  line-height: 1.1;
+  text-transform: uppercase; /* Makes it feel like a landmark title */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Essential for readability on images */
 }
 
 .intro {
@@ -31,26 +41,33 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+  padding: 40px;
 }
 
 /* Card Design */
 .infoCard {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  color: #111;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.infoCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+.infoCard h3 {
+  color: #004d33;               /* deeper forest green */
+  margin-bottom: 20px;
 }
 
-.infoCard h3 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  color: var(--primary);
+.infoCard .contact-line,
+.infoCard ul,
+.infoCard .smallText,
+.infoCard .address {
+  color: #1e1e1e;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
 }
 
 /* Text Styling */
@@ -123,10 +140,6 @@ ul li {
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-  }
-
-  .contactContainer {
-    margin: 40px auto;
   }
 
   .contactHeader h1 {

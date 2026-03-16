@@ -4,42 +4,60 @@ import './About.css';
 function About() {
   return (
     <div className="aboutContainer">
-      <h1>About Swami Samarth Homestay</h1>
-      
-      <p>
-        Welcome to <strong>Swami Samarth Homestay</strong> in beautiful Devgad, Sindhudurg, Maharashtra. 
-        We offer a peaceful, clean, and homely stay surrounded by nature, just minutes from Devgad Beach.
-      </p>
+      <div className="aboutContent">
+        <h1>About Swami Samarth Homestay</h1>
+        
+        <p className="lead">
+          Welcome to <strong>Swami Samarth Homestay</strong> in the serene coastal paradise of 
+          <strong> Devgad</strong>, Sindhudurg, Maharashtra. Nestled amid lush greenery, we offer 
+          a peaceful, spotlessly clean, and truly homely stay — just minutes from the pristine 
+          Devgad Beach.
+        </p>
 
-      <h2>Our Story</h2>
-      <p>
-        Our family has been welcoming guests for many years. We renovated our home to provide comfortable 
-        rooms with modern amenities while keeping the warm, traditional Konkani touch. Whether you're here 
-        for a beach holiday, Alphonso mango season, or to explore Sindhudurg forts, we make you feel at home.
-      </p>
+        <section className="section-card">
+          <h2>Our Story</h2>
+          <p>
+            For many years, our family has opened our hearts and home to travellers seeking an 
+            authentic Konkani experience. We carefully renovated our traditional house to blend 
+            modern comfort with the warm, timeless charm of coastal Maharashtra. 
+          </p>
+          <p>
+            Whether you're visiting during the golden <strong>Alphonso mango season</strong>, 
+            craving a quiet beach escape, or planning to explore historic forts like Vijaydurg — 
+            we treat every guest like family.
+          </p>
+        </section>
 
-      <h2>What We Offer</h2>
-      <ul className="list">
-        <li>Spacious, well-ventilated rooms</li>
-        <li>Hot water, clean bathrooms</li>
-        <li>Home-cooked Konkani meals (on request)</li>
-        <li>Free Wi-Fi and parking</li>
-        <li>Peaceful location away from city noise</li>
-      </ul>
+        <section className="section-card">
+          <h2>What We Offer</h2>
+          <ul className="list">
+            <li>Spacious, well-ventilated rooms with modern comforts</li>
+            <li>24-hour hot water and spotlessly clean bathrooms</li>
+            <li>Authentic home-cooked Konkani meals prepared fresh on request</li>
+            <li>Free high-speed Wi-Fi</li>
+            <li>Peaceful location surrounded by nature — far from city noise</li>
+          </ul>
+        </section>
 
-      <h2>Location Advantage</h2>
-      <p>
-        Devgad is famous for the world's best Alphonso mangoes and pristine beaches. 
-        Nearby attractions include:
-      </p>
-      <ul className="list">
-        <li>Devgad Beach (5-7 min drive)</li>
-        <li>Vijaydurg Fort (~45 min)</li>
-        <li>Nivati Beach & Windmill Park</li>
-        <li>Redi Ganesh Temple & Terekhol Fort</li>
-      </ul>
+        <section className="section-card">
+          <h2>Location Advantage</h2>
+          <p>
+            Devgad is world-famous for producing the finest <strong>Alphonso (Hapus)</strong> mangoes 
+            and boasts some of Maharashtra's cleanest, least-crowded beaches.
+          </p>
+          <p>Nearby attractions include:</p>
+          <ul className="list">
+            <li>Devgad Beach — just 5–7 minutes by car</li>
+            <li>Vijaydurg Fort — the "Gibraltar of the East" (~45 min drive)</li>
+            <li>Nivati Beach & scenic Windmill Park</li>
+            <li>Redi Ganesh Temple and Terekhol Fort</li>
+          </ul>
+        </section>
 
-      <p>We look forward to hosting you!</p>
+        <p className="closing">
+          We look forward to welcoming you to our home and sharing the magic of Devgad!
+        </p>
+      </div>
     </div>
   );
 }

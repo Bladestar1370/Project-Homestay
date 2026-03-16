@@ -3,6 +3,11 @@
 .attractionsContainer {
   padding: 40px 20px;
   background: #f8f9fa;
+  background-image:url("/background-images/attractions.png");
+  background-size: cover;          /* Fill the entire section */
+  background-position: center;     /* Center it */
+  background-repeat: no-repeat;
+  border-radius: 6%;
 }
 
 .title {
@@ -23,49 +28,129 @@
   margin: 0 auto;
 }
 
+/* Card Container */
 .card {
-  background: rgb(241, 238, 238);
-  border-radius: 10px;
+  background: white;                    /* clean white base */
+  border-radius: 16px;                  /* softer, modern corners */
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.616);
-  transition: transform 0.2s;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);  /* subtle lift, less aggressive */
+  transition: all 0.3s ease;            /* smooth transition */
   text-align: center;
-  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.06);  /* very light border for definition */
+   display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+  transform: translateY(-12px);         /* stronger lift on hover */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  border-color: rgba(34, 105, 197, 0.3); /* subtle blue tint on hover */
 }
 
+/* Image */
 .cardImage {
   width: 100%;
-  height: 180px;
+  height: 200px;                        /* slightly taller for better impact */
   object-fit: cover;
-  border-radius: 8px;
-
-  aspect-ratio: 16 / 9;     /* or 16/9, 3/2, 1/1 – test what looks best for your photos */
-  height: auto;            /* let height follow aspect-ratio */
-  min-height: 160px;
+  border-radius: 16px 16px 0 0;         /* rounded only on top */
+  transition: transform 0.4s ease;
 }
 
 .card:hover .cardImage {
-  transform: scale(1.05);
+  transform: scale(1.08);               /* gentle zoom + slower for premium feel */
+}
+
+/* Text Content */
+.card-content{
+  padding: 20px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-text{
+  flex-grow: 1;
 }
 
 .card h3 {
-  margin: 10px 0 5px;
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a365d;                       /* deep navy — elegant & readable */
+  line-height: 1.3;
+  font-family: 'Playfair Display', 'Georgia', serif;  /* or system serif for luxury feel */
+  /* Alternative: 'Noto Sans Devanagari' + 'Poppins' for Marathi/English mix */
 }
 
 .card p {
-  color: var(--gray);
+  margin: 0 0 16px;
+  color: #4a5568;                       /* softer gray */
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: 'Poppins', 'Noto Sans', sans-serif;
 }
 
+/* Button */
+.infoButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #2563eb, #0c1e52);  /* modern blue gradient */
+  color: white;
+  padding: 10px 24px;                   /* larger, more tappable */
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;                  /* pill shape — very current */
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);  /* glow shadow */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.infoButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.45);
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);  /* reverse on hover */
+}
+
+.infoButton:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+/* Optional: Add subtle icon (e.g. arrow) inside button via ::after or font-awesome */
+.infoButton::after {
+  content: "→";
+  margin-left: 8px;
+  font-weight: bold;
+  transition: transform 0.3s;
+}
+
+.infoButton:hover::after {
+  transform: translateX(4px);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .attractionsContainer {
-    padding: 30px 10px;
+  .card {
+    margin-bottom: 24px;
+  }
+  .cardImage {
+    height: 180px;
+  }
+  .card-content {
+    padding: 16px 14px 20px;
+  }
+  .infoButton {
+    padding: 9px 20px;
+    font-size: 0.95rem;
   }
 }
+
+
 
 
 

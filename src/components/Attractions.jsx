@@ -116,10 +116,18 @@ function Attractions() {
               alt={attr.title} 
               className="cardImage" 
               loading="lazy"
+              
             />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold">{attr.title}</h3>
-              <p className="text-gray-600 mt-1">{attr.description}</p>
+            
+            <div className="card-content">
+            <div className="card-text">
+            <h3>{attr.title}</h3>
+            <p>{attr.description}</p>
+            </div>
+
+            <button className="infoButton">
+             Click for more info
+            </button>
             </div>
           </Link>
         ))}

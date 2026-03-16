@@ -33,7 +33,7 @@
 
 .welcome h2 {
   margin-bottom: 1.5rem;
-  color: #388E3C;        /* matches your theme */
+  color: oklab(19.689% 0.00153 0.00045);        /* matches your theme */
 }
 
 /* Responsive adjustments */
