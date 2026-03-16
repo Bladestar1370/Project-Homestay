@@ -2,7 +2,7 @@
 
 .hero {
   background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-              url("https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/99/51/e5/devgad-beach.jpg?w=900&h=500&s=1");
+              url("/background-images/dev-beach-homepage.jpg");
   background-size: cover;
   background-position: center;
   color: white;
