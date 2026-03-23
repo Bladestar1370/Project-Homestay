@@ -20,12 +20,11 @@ function MithmumbariBeach() {
         },
       ]}
       about="Mithmumbari Beach is a pristine, uncrowded, and very long white-sand beach in Devgad, often called one of the cleanest and most beautiful in the area. Nestled between Devgad and Kunkeshwar beaches, it offers peaceful vibes, scenic coastal drives, and a perfect spot for relaxation away from crowds."
-      distance="3–5 km"
-      travelTime="8–15 minutes"
+      distance="4.5 km"
+      travelTime="10 minutes"
       reachList={[
-        "By auto-rickshaw (₹80–150)",
+        "By auto-rickshaw",
         "By private car, bike, or scooter (scenic route via Taramumbari bridge)",
-        "Local shared transport available from Devgad bus stand / town",
         "Easy access with beautiful coastal road drive",
       ]}
       mapQuery="Mithmumbari Beach Devgad Maharashtra"

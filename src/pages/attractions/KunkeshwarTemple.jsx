@@ -19,18 +19,17 @@ function KunkeshwarTemple() {
     alt: "Ancient stone carvings and structure of Kunkeshwar Shiva Temple",
   },
   {
-    src: "https://example.com/kunkeshwar-beach-temple.jpg",
+    src: "https://live.staticflickr.com/185/457667449_9fb3f4854e_b.jpg",
     alt: "Kunkeshwar Temple located next to the beach (placeholder image)",
   },
 ]}
       about="Kunkeshwar Temple (also known as Kunkeshwar Mahadev) is an ancient Shiva temple situated right next to a beautiful beach in Sindhudurg district. Often called 'Konkan Kashi', the temple features intricate stone carvings and is a major pilgrimage site. The adjacent Kunkeshwar Beach adds to its serene and spiritual charm."
-      distance="14–18 km"
-      travelTime="20–35 minutes"
+      distance="6.5 km"
+      travelTime="10-12 minutes"
       reachList={[
-        "By auto-rickshaw or taxi from Devgad (₹100–250 one way)",
+        "By auto-rickshaw from Devgad",
         "By private car or bike via Devgad–Kunkeshwar road",
         "By MSRTC bus from Devgad ST stand to Kunkeshwar",
-        "Nearest railway station: Kankavli or Nandgaon (≈45–55 km)",
       ]}
       mapQuery="Kunkeshwar Temple Maharashtra"
     />

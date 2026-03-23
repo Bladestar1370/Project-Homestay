@@ -1,10 +1,14 @@
 /* src/pages/ACrooms.css */
 
 .roomDetailsContainer {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+  width: 100%;
+  padding: 20px 0;
   text-align: center;
+  background-image: url("/background-images/rooms-details1.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;          /* Fill the entire section */
+  background-position: center; 
 }
 
 .roomDetailsContainer h1 {
@@ -150,7 +154,8 @@
 }
 
 .features-list li{
-  background:#f7f7f7;
+  background: white;
+  border:1px solid #1f1e1e;
   padding:8px 12px;
   border-radius:6px;
 }
@@ -170,9 +175,10 @@
 /* CONTACT CARD */
 
 .booking-card{
+  background-color: white;
   position:sticky;
   top:100px;
-  border:1px solid #ddd;
+  border:1.2px solid #050505;
   padding:25px;
   border-radius:10px;
   height:fit-content;
@@ -221,6 +227,14 @@
   .booking-card{
     position:relative;
     top:0;
+  }
+
+}
+
+@media (max-width: 400px){
+
+  .room-title{
+    font-size:1.3rem;
   }
 
 }

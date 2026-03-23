@@ -1,15 +1,17 @@
 import RoomDetail from '../RoomsType/RoomDetail';
 import ac101room1 from '../../assets/rooms/ac/101room1.webp';
 import ac101room2 from '../../assets/rooms/ac/101room2.webp';
+import ac101room3 from '../../assets/rooms/ac/101room3.webp';
 import ac103room1 from '../../assets/rooms/ac/103room1.webp';
 import acBefore from '../../assets/beforeAfter/101-before.webp';
 import acAfter from '../../assets/beforeAfter/101-after.webp';
 import './Rooms.css';
 
 const acImages = [
-  { src: ac101room1, alt: 'AC Deluxe Room - Queen Bed' },
-  { src: ac101room2, alt: 'AC Deluxe Room - Modern Bathroom' },
-  { src: ac103room1, alt: 'AC Deluxe Room - Balcony View' },
+  { src: ac101room1, alt: 'AC Room' },
+  { src: ac101room2, alt: 'AC Room' },
+  { src: ac101room3, alt: 'AC Room' },
+  { src: ac103room1, alt: 'AC Room' }
 ];
 
 const acFeatures = [

@@ -1,7 +1,7 @@
 /* src/components/RoomGallery.css */
 
 .room-gallery-slider {
-  margin: 30px auto;
+  margin: auto;
   width: 100%;
   max-width: 1200px;
   max-height: 500px;

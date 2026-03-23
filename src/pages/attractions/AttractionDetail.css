@@ -8,7 +8,7 @@
   background-size: cover;          /* Fill the entire section */
   background-position: center;     /* Center it */
   background-repeat: no-repeat;
-  
+  background-attachment: fixed;
   
 }
 

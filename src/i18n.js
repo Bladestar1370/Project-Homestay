@@ -8,8 +8,8 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: 'mr',                    // default Marathi
-    fallbackLng: 'en',
+    lng: 'en',                    // default Marathi
+    fallbackLng: 'mr',
     debug: import.meta.env.MODE === 'development',
 
     backend: {

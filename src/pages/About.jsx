@@ -17,14 +17,10 @@ function About() {
         <section className="section-card">
           <h2>Our Story</h2>
           <p>
-            For many years, our family has opened our hearts and home to travellers seeking an 
-            authentic Konkani experience. We carefully renovated our traditional house to blend 
-            modern comfort with the warm, timeless charm of coastal Maharashtra. 
+            Welcome to our family-run Konkani homestay in Devgad, where comfort meets the charm of coastal Maharashtra. We welcome travellers who are looking for a peaceful stay, local food, and a true Konkan experience. 
           </p>
           <p>
-            Whether you're visiting during the golden <strong>Alphonso mango season</strong>, 
-            craving a quiet beach escape, or planning to explore historic forts like Vijaydurg — 
-            we treat every guest like family.
+            Our traditional home is carefully renovated with modern facilities while keeping its natural and cultural beauty. Surrounded by greenery and located close to beautiful beaches, our homestay is perfect for a relaxing holiday.
           </p>
         </section>
 
@@ -47,10 +43,10 @@ function About() {
           </p>
           <p>Nearby attractions include:</p>
           <ul className="list">
-            <li>Devgad Beach — just 5–7 minutes by car</li>
+            <li>Devgad Beach — just 1 minutes away</li>
+            <li>Kunkeshwar Temple — a serene seaside Shiva temple (~12 min drive)</li>
             <li>Vijaydurg Fort — the "Gibraltar of the East" (~45 min drive)</li>
-            <li>Nivati Beach & scenic Windmill Park</li>
-            <li>Redi Ganesh Temple and Terekhol Fort</li>
+            <li>Malvan — famous for seafood and water sports (~1 hr drive)</li>
           </ul>
         </section>
 

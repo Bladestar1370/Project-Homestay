@@ -18,14 +18,14 @@ function DevgadBeach() {
           alt: "Zipline adventure overlooking Devgad Beach",
         },
       ]}
-      about="Devgad Beach is a calm, clean, and less crowded beach in the Konkan region, known for its golden sand and peaceful sunsets."
-      distance="3–6 km"
-      travelTime="5–12 minutes"
+      about="Devgad Beach is a calm and less crowded coastal spot known for its wide shoreline, soft golden sand, and gentle waves. Surrounded by natural beauty, it offers a peaceful environment ideal for relaxing walks, enjoying fresh sea breeze, and witnessing stunning sunsets. It’s a great place for visitors looking for a quiet and refreshing beach experience."
+      distance="1 km"
+      travelTime="2-4 minutes"
       reachList={[
-        "By auto-rickshaw (₹50–120)",
+        "By auto-rickshaw",
         "By private car or bike",
-        "Walking if nearby",
-        "Local shared autos available",
+        "Walking",
+        "Local auto can be provided",
       ]}
       mapQuery="Devgad Beach Maharashtra"
     />

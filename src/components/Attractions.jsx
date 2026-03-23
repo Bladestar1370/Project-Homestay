@@ -39,7 +39,7 @@ function Attractions() {
       slug: 'kunkeshwar-temple',
       title: 'Kunkeshwar Temple',
       description: 'Ancient Shiva temple by the beach (~20-35 min drive).',
-      image: 'https://static.mediawire.in/pr/metadata/47901564/temp/52138844_Kankeshwar_Temple.png?id=47875',
+      image: 'https://t3.ftcdn.net/jpg/05/43/38/46/360_F_543384666_jdBc3qC2gwGLHMVyv03ikTQzr19RRQgP.jpg',
       type: 'temple',
       distance: 'nearby',
     },

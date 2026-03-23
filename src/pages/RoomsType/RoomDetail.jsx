@@ -48,7 +48,7 @@ export default function RoomDetail({
           </ul>
 
           {/* Before After Slider */}
-          {beforeSrc && afterSrc && (
+          {/* {beforeSrc && afterSrc && (
             <BeforeAfterSlider
               beforeSrc={beforeSrc}
               afterSrc={afterSrc}
@@ -56,7 +56,7 @@ export default function RoomDetail({
               afterAlt={afterAlt}
               title={sliderTitle}
             />
-          )}
+          )} */}
 
         </div>
 

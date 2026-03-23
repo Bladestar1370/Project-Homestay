@@ -23,13 +23,12 @@ function DevgadFortAndLighthouse() {
     alt: "Devgad Lighthouse inside the fort premises with sea views",
   },
 ]}
-      about="Devgad Fort (also known as Janjira Devgad Fort) is a historic coastal fort situated right at the mouth of Devgad Creek where it meets the Arabian Sea. Built during the Maratha era (around 1705 by Kanhoji Angre), it is now mostly in ruins but offers excellent panoramic views of the sea, creek, and coastline. Inside the fort premises stands the active Devgad Lighthouse (established in the early 20th century), which provides one of the best 360° sunset viewpoints in the area. Small temples (Ganesh & Hanuman) and old bastions add to the charm. It's a peaceful, low-crowd spot perfect for history, photography, and relaxing by the sea."
-      distance="1–3 km"
-      travelTime="5–10 minutes"
+      about="Devgad Fort and Devgad Lighthouse together form a beautiful coastal attraction in the Konkan region. The historic fort reflects Maratha architecture, while the nearby lighthouse offers stunning panoramic views of the Arabian Sea. It’s a perfect spot to enjoy history, scenic landscapes, and peaceful sunsets."
+      distance="2 km"
+      travelTime="5-7 minutes"
       reachList={[
-        "Extremely close to Devgad town center and Devgad Beach – easily walkable or short auto/bike ride",
-        "Accessible by car/bike from Devgad Bus Stand or main market",
-        "Small entry fee usually ₹10–20 per person",
+        "Extremely close to Devgad Beach – easily walkable or short auto/bike ride",
+        "By private car or bike",
         "Best visited in late afternoon for sunset views from the lighthouse area",
       ]}
       mapQuery="Devgad Fort, Devgad, Sindhudurg, Maharashtra"
