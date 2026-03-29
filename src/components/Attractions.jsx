@@ -51,22 +51,6 @@ function Attractions() {
       type: 'beach',
       distance: 'very-close',
     },
-    {
-      slug: 'nivati-beach',
-      title: 'Nivati Beach',
-      description: 'Serene & less crowded (~45-60 min drive).',
-      image: 'https://www.shutterstock.com/image-photo/colourful-sky-devgad-beach-during-260nw-1467138248.jpg',
-      type: 'beach',
-      distance: 'day-trip',
-    },
-    {
-      slug: 'redi-ganesh-temple',
-      title: 'Redi Ganesh Temple',
-      description: 'Ancient self-manifested Ganpati (~60-90 min drive).',
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKwt1Vt3Agfleeffc2e_XzB_5RBNMVVDq_Jw&s',
-      type: 'temple',
-      distance: 'day-trip',
-    },
   ];
 
   const filteredAttractions = attractions.filter((attr) => {
