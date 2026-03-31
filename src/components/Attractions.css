@@ -3,7 +3,7 @@
 .attractionsContainer {
   padding: 40px 20px;
   background: #f8f9fa;
-  background-image:url("/background-images/attractions.png");
+  background-image:url("/background-images/attractions.webp");
   background-size: cover;          /* Fill the entire section */
   background-position: center;     /* Center it */
   background-repeat: no-repeat;
