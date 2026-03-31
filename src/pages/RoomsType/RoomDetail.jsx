@@ -3,6 +3,7 @@
 import RoomGallery from "../../components/RoomGallery";
 import BeforeAfterSlider from "../../components/BeforeAfterSlider";
 import "./Rooms.css";
+import { useTranslation } from "react-i18next";
 
 export default function RoomDetail({
   title,
@@ -16,10 +17,11 @@ export default function RoomDetail({
   afterAlt = "Room after improvements",
   sliderTitle = "Room Before & After",
 }) {
+  const { t } = useTranslation();
   return (
     <div className={`roomDetailsContainer ${className}`}>
 
-      <h1 className="room-title">{title}</h1>
+      <h1 className="room-title">{t(title)}</h1>
 
       {/* Image Gallery */}
       <RoomGallery images={images} />
@@ -29,22 +31,22 @@ export default function RoomDetail({
         {/* LEFT SIDE */}
         <div className="room-info">
 
-          <h2>Room Description</h2>
-          <p className="room-description">{description}</p>
+          <h2>{t("Room Description")}</h2>
+          <p className="room-description">{t(description)}</p>
 
-          <h2>Amenities</h2>
+          <h2>{t("Amenities")}</h2>
           <ul className="features-list">
             {features.map((feature, idx) => (
-              <li key={idx}>{feature}</li>
+              <li key={idx}>{t(feature)}</li>
             ))}
           </ul>
 
-          <h2>Room Details</h2>
+          <h2>{t("Room Details")}</h2>
           <ul className="room-extra">
-            <li>👥 Capacity: 2 Adults</li>
-            <li>🛏 Bed Type: King Size Bed</li>
-            <li>⏰ Check-in: 12 PM</li>
-            <li>⏰ Check-out: 11 AM</li>
+            <li>👥 {t("Capacity: 2 Adults")}</li>
+            <li>🛏 {t("Bed Type: King Size Bed")}</li>
+            <li>⏰ {t("Check-in: 12 PM")}</li>
+            <li>⏰ {t("Check-out: 11 AM")}</li>
           </ul>
 
           {/* Before After Slider */}
@@ -64,10 +66,10 @@ export default function RoomDetail({
         {/* RIGHT SIDE CONTACT CARD */}
         <div className="booking-card">
 
-          <h3>Book This Room</h3>
+          <h3>{t("Book This Room")}</h3>
 
           <p className="contact-text">
-            For booking and availability please contact:
+            {t("For booking and availability please contact:")}
           </p>
 
           <p className="phone-number">
@@ -76,7 +78,7 @@ export default function RoomDetail({
           </p>
 
           <a href="tel:8805182813" className="call-btn">
-            Call Now
+            {t('Call Now')}
           </a>
 
           <a
@@ -85,7 +87,7 @@ export default function RoomDetail({
             rel="noopener noreferrer"
             className="whatsapp-btn"
           >
-            WhatsApp Booking
+            {t("WhatsApp Booking")}
           </a>
 
         </div>
