@@ -1,17 +1,39 @@
 /* src/pages/Home.css */
 
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-              url("/background-images/dev-beach-homepage.webp");
-  background-size: cover;
-  background-position: center;
+  position: relative;
+  min-height: 400px;
   color: white;
   text-align: center;
-  padding: 120px 20px;
-  min-height: 400px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.hero img.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+  z-index: 0;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;           /* ← Increased this */
+  width: 100%;
 }
 
 .hero h1 {

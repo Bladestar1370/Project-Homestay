@@ -12,8 +12,17 @@ const { t } = useTranslation();
     <div>
       {/* Hero Section */}
       <div className="hero">
-        <h1>{t("Swami Samarth Homestay")}</h1>
-        <p>{t("Peaceful • Clean • Near Devgad Beach")}</p>
+        <img src="/background-images/dev-beach-homepage.webp" 
+         alt="Devgad Beach"
+         fetchPriority='high'
+         width= "1280"
+         height= "720"
+         className= "hero-image" 
+         />
+         <div className="hero-content">
+            <h1>{t("Swami Samarth Homestay")}</h1>
+            <p>{t("Peaceful • Clean • Near Devgad Beach")}</p>
+        </div>
       </div>
 
       {/* Welcome Section */}
