@@ -1,9 +1,9 @@
 # 🏡 Shree Swami Samarth Homestay | Devgad
 
 
-**A beautiful, fast, and responsive website** for **Shree Swami Samarth Homestay** located in Devbag, Malvan (Sindhudurg), Maharashtra.
+**A beautiful, fast, and responsive website** for **Shree Swami Samarth Homestay** located in Devgad (Sindhudurg), Maharashtra.
 
-Peaceful AC & Non-AC rooms just minutes from Devbag Beach. Perfect for families, couples, and nature lovers.
+Peaceful AC & Non-AC rooms just minutes from Devgad Beach. Perfect for families, couples, and nature lovers.
 
 ---
 
